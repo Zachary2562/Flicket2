@@ -1,13 +1,11 @@
-# add_admin.py
-
 from application import app, db
 from application.flicket.models.flicket_user import FlicketUser, FlicketGroup
 from application.flicket.scripts.hash_password import hash_password
 from datetime import datetime
 
 with app.app_context():
-    admin_username = "Admin User"
-    admin_name = "Admin Name"
+    admin_username = "admin"          # Username used to log in
+    admin_name = "Admin User"         # Display name at the top
     admin_email = "admin@example.com"
     admin_password = "Admin123"
     group_name = getattr(app.config, "ADMIN_GROUP_NAME", "flicket_admin")
